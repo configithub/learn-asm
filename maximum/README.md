@@ -18,7 +18,7 @@ eax, contains the next value to be compared to the maximum value as of now
 
 ebx, contains the result, also contains the return value of the exit system call
 
-##jump :
+##instrucitons :
 
 je, jump if equal
 
