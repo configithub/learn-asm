@@ -46,7 +46,8 @@ Parameter 1      <--- 8(%ebp)
 
 Return Address   <--- 4(%ebp), where we need to go back to after the function call
 
-Old %ebp         <--- (%ebp), we will restore this value in ebp after the function call, and reset the top of the stack here as well
+Old %ebp         <--- (%ebp), we will restore this value in ebp after the function call, 
+                                          and reset the top of the stack here as well
 
 Local Variable 1 <--- -4(%ebp)
 
