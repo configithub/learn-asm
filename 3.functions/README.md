@@ -40,16 +40,20 @@ after the return adress we store the old value of the base point register : ebp
 after the old ebp, we reserve memory space for the local variables of the function
 
 ```
-Parameter #N     <--- N*4+4(%ebp)
-...
-Parameter 2      <--- 12(%ebp)
-Parameter 1      <--- 8(%ebp)
-Return Address   <--- 4(%ebp), where we need to go back to after the function call
-Old %esp         <--- (%ebp), we will restore this value in esp after the function call, 
-                                          and popl esb back
-Local Variable 1 <--- -4(%ebp)
+[smaller addresses]
 Local Variable 2 <--- -8(%ebp) and (%esp), top of the stack
+Local Variable 1 <--- -4(%ebp)
+Old %esp         <--- (%ebp), we will restore this value in esp after the function call,
+                                          and popl esb back
+Return Address   <--- 4(%ebp), where we need to go back to after the function call
+Parameter 1      <--- 8(%ebp)
+Parameter 2      <--- 12(%ebp)
+...
+Parameter #N     <--- N*4+4(%ebp)
+[bigger addresses]
 ```
+
+The stack is stored backwards : smaller address are at the top. New values are pushed to it at the top.
 
 ## function return :
 
